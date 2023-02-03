@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/pets_flow_graph"
+    app:startDestination="@id/petListFragment">
+
+    <fragment
+        android:id="@+id/petListFragment"
+        android:name="com.sepiainnovations.petsapp.views.PetListFragment"
+        android:label="PetListFragment" >
+        <action
+            android:id="@+id/action_petListFragment_to_petDetailsFragment"
+            app:destination="@id/petDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/petDetailsFragment"
+        android:name="com.sepiainnovations.petsapp.views.PetDetailsFragment"
+        android:label="fragment_pet_details"
+        tools:layout="@layout/fragment_pet_details" />
+</navigation>

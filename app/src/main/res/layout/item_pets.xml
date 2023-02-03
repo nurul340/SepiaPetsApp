@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.google.android.material.card.MaterialCardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dp"
+        card_view:cardBackgroundColor="#fff"
+        card_view:cardCornerRadius="5dp"
+        android:foreground="?selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        card_view:cardElevation="4dp"
+        card_view:cardUseCompatPadding="true"
+        android:layout_marginBottom="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp">
+
+            <ImageView
+                android:id="@+id/iv_petImage"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                tools:src="@drawable/placeholdet_pet_pow"
+                android:scaleType="fitXY"
+                android:layout_centerInParent="true"
+                android:contentDescription="@string/iv_content_dest_pet"/>
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_petName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Pet Name"
+                android:layout_marginTop="25dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/grey_500"
+                android:layout_below="@+id/iv_petImage"
+                android:layout_centerHorizontal="true"/>
+
+            </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

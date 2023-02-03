@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">SepiaPetsApp</string>
+    <string name="iv_content_dest_pet">desc...</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="mssg_loading_data">Loading data. please wait...</string>
 </resources>
