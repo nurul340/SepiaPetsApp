@@ -40,14 +40,15 @@ class PetsRepository @Inject constructor(
     }
 
     /**
-     * Retrieve the article paragraph with the help wikipedia api
+     * Retrieve the article paragraph using wikipedia api
      */
     suspend fun retrieveContentDescriptionWikiApi(contentName: String): Result<WikiResponse>{
         return apiInterface.getDescription(contentName)
     }
 
     /**
-     * Retrieve the article paragraph with the help of Jsoup library
+     * Retrieve the article paragraph using Jsoup library.
+     *
      */
     fun retrieveUsingSomething(contentUrl: String): String?{
         return try {

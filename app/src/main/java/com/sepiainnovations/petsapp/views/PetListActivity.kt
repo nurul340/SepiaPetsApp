@@ -9,15 +9,16 @@ import com.sepiainnovations.petsapp.R
 import com.sepiainnovations.petsapp.databinding.ActivityPetListBinding
 import com.sepiainnovations.petsapp.viewmodel.PetListActivityViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import java.util.*
 
 
 @AndroidEntryPoint
-class PetListActivity : AppCompatActivity() {
+class PetListActivity: AppCompatActivity() {
 
 
     private lateinit var binding: ActivityPetListBinding
 
-    private lateinit var activityViewModel: PetListActivityViewModel
+    lateinit var activityViewModel: PetListActivityViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,9 +27,7 @@ class PetListActivity : AppCompatActivity() {
 
         activityViewModel = ViewModelProvider(this)[PetListActivityViewModel::class.java]
 
-
         activityViewModel.isWorkingHour.observe(this){ isWorkingHour->
-
             //setup the nav fragments only if its working hour
             if(isWorkingHour){
                 setupNavGraph()
@@ -36,6 +35,14 @@ class PetListActivity : AppCompatActivity() {
                 showAlertDialog()
             }
         }
+
+        activityViewModel.checkWorkingHour(
+            Calendar.getInstance(),
+            START_DAY_OF_WEEK,
+            END_DAY_OF_WEEK,
+            START_TIME,
+            END_TIME
+        )
     }
 
 
@@ -59,4 +66,11 @@ class PetListActivity : AppCompatActivity() {
         alertDialog.show()
     }
 
+
+    companion object{
+        const val START_DAY_OF_WEEK: Int = Calendar.MONDAY
+        const val END_DAY_OF_WEEK: Int = Calendar.FRIDAY
+        const val START_TIME: Int = 9
+        const val END_TIME: Int = 18
+    }
 }
